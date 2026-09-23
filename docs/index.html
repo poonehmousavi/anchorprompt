@@ -100,6 +100,16 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
 .group-title{font-size:1.1rem;margin:22px 0 4px}
 .group-sub{color:var(--muted);font-size:.92rem;margin:0 0 12px}
 .ex .track{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:600}
+.bleed{width:min(1480px,calc(100vw - 32px));position:relative;left:50%;transform:translateX(-50%)}
+.model-block{margin-top:30px;padding-top:22px;border-top:1px dashed var(--line)}
+.model-block:first-of-type{border-top:0;padding-top:0}
+.model-title{font-size:1.3rem;margin:0 0 2px}
+.row4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.row2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:calc(50% + 8px)}
+@media (max-width:1180px){.row4{grid-template-columns:repeat(2,minmax(0,1fr))}.row2{max-width:none}}
+@media (max-width:640px){.row4,.row2{grid-template-columns:1fr}}
+.ex{padding:16px}
+.ex h3{font-size:1rem}
 </style>
 </head>
 <body>
@@ -191,18 +201,14 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
   </ul>
 </section>
 
-<section id="examples">
+<section id="examples" class="bleed">
   <h2>Audio examples</h2>
-  <p>SAKURA test-split questions that the model answers correctly on clean audio. Each card plays the clean and the perturbed input and shows the answer of the frozen model alone (<b>Base</b>) and with the learned prompt (<b>+ AnchorPrompt</b>). Where possible the same recording is used for all three models.</p>
-  <div class="tabs" role="tablist">
-<button class="tab" role="tab" aria-selected="true" aria-controls="p-qwen25-omni">Qwen2.5-Omni-7B</button>
-<button class="tab" role="tab" aria-selected="false" aria-controls="p-qwen3-omni">Qwen3-Omni-30B-A3B</button>
-<button class="tab" role="tab" aria-selected="false" aria-controls="p-af3">Audio Flamingo 3</button>
-  </div>
-<div class="panel" id="p-qwen25-omni" role="tabpanel">
-  <h3 class="group-title">Robustness: the clean answer survives the perturbation</h3>
+  <p>SAKURA test-split questions that the model answers correctly on clean audio. Each card plays the clean and the perturbed input and shows the answer of the frozen model alone (<b>Base</b>) and with the learned prompt (<b>+ AnchorPrompt</b>). The three models are shown one after the other; where possible the same recording is used for all of them.</p>
+<div class="model-block">
+  <h3 class="model-title">Qwen2.5-Omni-7B</h3>
+  <h4 class="group-title">Robustness: the clean answer survives the perturbation</h4>
   <p class="group-sub">The base model is misled; with AnchorPrompt it returns to the answer it gives on clean audio.</p>
-  <div class="examples"><article class="ex">
+  <div class="examples row4"><article class="ex">
   <span class="track">Animal</span>
   <h3>Adversarial audio injection</h3>
   <p class="note">A synthesized voice speaking a wrong option is mixed into the recording.</p>
@@ -251,9 +257,9 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(a) cat</dd></div>
   </dl>
 </article></div>
-  <h3 class="group-title">Hallucination: declining when the audio carries no evidence</h3>
+  <h4 class="group-title">Hallucination: declining when the audio carries no evidence</h4>
   <p class="group-sub">The base model still picks an option; with AnchorPrompt it answers CANNOT DETERMINE.</p>
-  <div class="examples"><article class="ex">
+  <div class="examples row2"><article class="ex">
   <span class="track">Animal</span>
   <h3>Silence (100% masking)</h3>
   <p class="note">The whole recording is silent: nothing supports any option.</p>
@@ -279,10 +285,11 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
   </dl>
 </article></div>
 </div>
-<div class="panel" id="p-qwen3-omni" role="tabpanel" hidden>
-  <h3 class="group-title">Robustness: the clean answer survives the perturbation</h3>
+<div class="model-block">
+  <h3 class="model-title">Qwen3-Omni-30B-A3B</h3>
+  <h4 class="group-title">Robustness: the clean answer survives the perturbation</h4>
   <p class="group-sub">The base model is misled; with AnchorPrompt it returns to the answer it gives on clean audio.</p>
-  <div class="examples"><article class="ex">
+  <div class="examples row4"><article class="ex">
   <span class="track">Animal</span>
   <h3>Adversarial audio injection</h3>
   <p class="note">A synthesized voice speaking a wrong option is mixed into the recording.</p>
@@ -331,9 +338,9 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(b) cat</dd></div>
   </dl>
 </article></div>
-  <h3 class="group-title">Hallucination: declining when the audio carries no evidence</h3>
+  <h4 class="group-title">Hallucination: declining when the audio carries no evidence</h4>
   <p class="group-sub">The base model still picks an option; with AnchorPrompt it answers CANNOT DETERMINE.</p>
-  <div class="examples"><article class="ex">
+  <div class="examples row2"><article class="ex">
   <span class="track">Animal</span>
   <h3>Silence (100% masking)</h3>
   <p class="note">The whole recording is silent: nothing supports any option.</p>
@@ -359,10 +366,11 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
   </dl>
 </article></div>
 </div>
-<div class="panel" id="p-af3" role="tabpanel" hidden>
-  <h3 class="group-title">Robustness: the clean answer survives the perturbation</h3>
+<div class="model-block">
+  <h3 class="model-title">Audio Flamingo 3</h3>
+  <h4 class="group-title">Robustness: the clean answer survives the perturbation</h4>
   <p class="group-sub">The base model is misled; with AnchorPrompt it returns to the answer it gives on clean audio.</p>
-  <div class="examples"><article class="ex">
+  <div class="examples row4"><article class="ex">
   <span class="track">Animal</span>
   <h3>Adversarial audio injection</h3>
   <p class="note">A synthesized voice speaking a wrong option is mixed into the recording.</p>
@@ -411,9 +419,9 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(d) cat</dd></div>
   </dl>
 </article></div>
-  <h3 class="group-title">Hallucination: declining when the audio carries no evidence</h3>
+  <h4 class="group-title">Hallucination: declining when the audio carries no evidence</h4>
   <p class="group-sub">The base model still picks an option; with AnchorPrompt it answers CANNOT DETERMINE.</p>
-  <div class="examples"><article class="ex">
+  <div class="examples row2"><article class="ex">
   <span class="track">Animal</span>
   <h3>Silence (100% masking)</h3>
   <p class="note">The whole recording is silent: nothing supports any option.</p>
