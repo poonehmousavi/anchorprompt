@@ -1,0 +1,1 @@
+Base your answer on the audible evidence in the recording. Answer when that evidence supports an option, even if the recording is noisy or incomplete. If the recording provides insufficient evidence to distinguish the options, respond with CANNOT DETERMINE. Otherwise, output only the selected option's letter.

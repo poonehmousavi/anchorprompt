@@ -1,0 +1,41 @@
+# AnchorPrompt — pinned versions of the environment used for the paper.
+# Tested with Qwen2.5-Omni-7B, Qwen3-Omni-30B-A3B and Audio Flamingo 3 on CUDA GPUs (sm_75+).
+# torch 2.12.0+cu130 arch list: sm_75 sm_80 sm_86 sm_90 sm_100 sm_120
+#   -> rtx8000 (sm_75) OK, l40s (sm_89) OK via sm_86, a100/h100 OK, v100 (sm_70) NOT supported.
+# Install torch from the cu130 index:
+#   pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu130
+
+# Core
+torch==2.12.0
+torchaudio==2.11.0
+torchvision==0.27.0   # required by qwen-omni-utils (vision_process imports it)
+transformers==5.10.2
+accelerate==1.13.0
+huggingface_hub==1.17.0
+datasets==4.8.5
+peft==0.19.1
+
+# Qwen2.5-Omni multimodal input helper (process_mm_info)
+qwen-omni-utils==0.0.9
+
+# Audio
+librosa==0.11.0
+soundfile==0.13.1
+numpy==1.26.4
+scipy==1.15.3
+
+# Experiment plumbing
+pandas
+pyyaml
+tqdm
+gdown
+
+# Analysis / figures
+matplotlib
+
+# Tests
+pytest
+pypdf==6.16.2
+noisereduce==3.0.3
+silero-vad==6.2.1
+speechbrain==1.1.1

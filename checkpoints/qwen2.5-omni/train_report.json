@@ -1,0 +1,86 @@
+{
+  "config": {
+    "attacks": [
+      "noise_20dB",
+      "noise_10dB",
+      "noise_0dB",
+      "noise_-10dB",
+      "noise_-20dB",
+      "mask_20",
+      "mask_40",
+      "mask_60",
+      "mask_80",
+      "mask_100",
+      "adv_wrong",
+      "text_inject"
+    ],
+    "format": "direct_abstain",
+    "train_limit": 200,
+    "train_frac": 0.2,
+    "epochs": 3,
+    "slots_per_condition": 4,
+    "prompt_len": 8,
+    "top_k": 1,
+    "lr": 0.001,
+    "lambda_match": 1.0,
+    "accum": 8,
+    "heldout_frac": 0.1,
+    "fewshot": [
+      "mmau:67",
+      "mmar:199"
+    ],
+    "init": null,
+    "objective": "grad",
+    "rl_sigma": 0.002,
+    "rl_lr": 0.0001,
+    "rl_block": false,
+    "rl_dim": 0,
+    "rl_reward": "logp",
+    "pool_type": "single",
+    "n_slots": 1,
+    "lambda_div": 1.0,
+    "key_loss": "pull",
+    "lambda_con": 1.0,
+    "seed": 0,
+    "out": "output/softpool_single_L8_full",
+    "dry_run": false,
+    "conditions": [
+      "clean",
+      "noise_20dB",
+      "noise_10dB",
+      "noise_0dB",
+      "noise_-10dB",
+      "noise_-20dB",
+      "mask_20",
+      "mask_40",
+      "mask_60",
+      "mask_80",
+      "mask_100",
+      "adv_wrong",
+      "text_inject"
+    ],
+    "fewshot_n": {
+      "mmau": 201,
+      "mmar": 199
+    }
+  },
+  "objective": "grad",
+  "pool_type": "single",
+  "key_loss": "pull",
+  "n_slots": 1,
+  "n_train_tasks": 1200,
+  "fewshot": {
+    "mmau": 201,
+    "mmar": 199
+  },
+  "n_fit_examples": 11905,
+  "n_heldout_examples": 1330,
+  "skipped": {
+    "adv_wrong": 361
+  },
+  "best_epoch": 2,
+  "best_heldout_agree": 81.8,
+  "pool_params": 32256,
+  "elapsed_s": 11757.9,
+  "peak_vram_gb": 17.92
+}

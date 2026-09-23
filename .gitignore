@@ -1,0 +1,9 @@
+data/*
+!data/benchmarks/
+data/benchmarks/*
+!data/benchmarks/mmau_meta.json
+output/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store

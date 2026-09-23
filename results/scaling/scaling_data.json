@@ -1,0 +1,816 @@
+{
+  "axis": "data",
+  "table": {
+    "10": {
+      "sakura": {
+        "clean_acc": [
+          67.34,
+          0.0
+        ],
+        "clean_net": [
+          1.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.78,
+          0.0
+        ],
+        "consistency_answerable": [
+          73.15,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          91.88,
+          0.0
+        ],
+        "net": {
+          "adv_wrong": [
+            9.0,
+            0.0
+          ],
+          "mask_100": [
+            363.0,
+            0.0
+          ],
+          "mask_40": [
+            8.0,
+            0.0
+          ],
+          "mask_60": [
+            4.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            115.0,
+            0.0
+          ],
+          "noise_0dB": [
+            8.0,
+            0.0
+          ],
+          "noise_10dB": [
+            11.0,
+            0.0
+          ],
+          "text_inject": [
+            142.0,
+            0.0
+          ]
+        }
+      },
+      "mmau": {
+        "clean_acc": [
+          66.67,
+          0.0
+        ],
+        "clean_net": [
+          -9.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.63,
+          0.0
+        ],
+        "consistency_answerable": [
+          77.36,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          79.56,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            96.0,
+            0.0
+          ],
+          "mask_40": [
+            -8.0,
+            0.0
+          ],
+          "mask_60": [
+            -11.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            31.0,
+            0.0
+          ],
+          "noise_0dB": [
+            -6.0,
+            0.0
+          ],
+          "noise_10dB": [
+            -10.0,
+            0.0
+          ],
+          "text_inject": [
+            25.0,
+            0.0
+          ]
+        }
+      },
+      "mmar": {
+        "clean_acc": [
+          58.49,
+          0.0
+        ],
+        "clean_net": [
+          7.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          1.26,
+          0.0
+        ],
+        "consistency_answerable": [
+          72.08,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          88.05,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            41.0,
+            0.0
+          ],
+          "mask_40": [
+            7.0,
+            0.0
+          ],
+          "mask_60": [
+            11.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            6.0,
+            0.0
+          ],
+          "noise_0dB": [
+            7.0,
+            0.0
+          ],
+          "noise_10dB": [
+            5.0,
+            0.0
+          ],
+          "text_inject": [
+            26.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "20": {
+      "sakura": {
+        "clean_acc": [
+          70.16,
+          0.0
+        ],
+        "clean_net": [
+          19.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          1.25,
+          0.0
+        ],
+        "consistency_answerable": [
+          74.79,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          92.11,
+          0.0
+        ],
+        "net": {
+          "adv_wrong": [
+            43.0,
+            0.0
+          ],
+          "mask_100": [
+            345.0,
+            0.0
+          ],
+          "mask_40": [
+            18.0,
+            0.0
+          ],
+          "mask_60": [
+            27.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            136.0,
+            0.0
+          ],
+          "noise_0dB": [
+            16.0,
+            0.0
+          ],
+          "noise_10dB": [
+            22.0,
+            0.0
+          ],
+          "text_inject": [
+            189.0,
+            0.0
+          ]
+        }
+      },
+      "mmau": {
+        "clean_acc": [
+          66.67,
+          0.0
+        ],
+        "clean_net": [
+          -9.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          1.26,
+          0.0
+        ],
+        "consistency_answerable": [
+          77.86,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          83.65,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            99.0,
+            0.0
+          ],
+          "mask_40": [
+            -11.0,
+            0.0
+          ],
+          "mask_60": [
+            -6.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            41.0,
+            0.0
+          ],
+          "noise_0dB": [
+            -6.0,
+            0.0
+          ],
+          "noise_10dB": [
+            -5.0,
+            0.0
+          ],
+          "text_inject": [
+            38.0,
+            0.0
+          ]
+        }
+      },
+      "mmar": {
+        "clean_acc": [
+          62.26,
+          0.0
+        ],
+        "clean_net": [
+          13.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          3.77,
+          0.0
+        ],
+        "consistency_answerable": [
+          71.19,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          87.1,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            41.0,
+            0.0
+          ],
+          "mask_40": [
+            14.0,
+            0.0
+          ],
+          "mask_60": [
+            27.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            3.0,
+            0.0
+          ],
+          "noise_0dB": [
+            15.0,
+            0.0
+          ],
+          "noise_10dB": [
+            11.0,
+            0.0
+          ],
+          "text_inject": [
+            47.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "30": {
+      "sakura": {
+        "clean_acc": [
+          71.56,
+          0.0
+        ],
+        "clean_net": [
+          28.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.0,
+          0.0
+        ],
+        "consistency_answerable": [
+          80.03,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          98.91,
+          0.0
+        ],
+        "net": {
+          "adv_wrong": [
+            120.0,
+            0.0
+          ],
+          "mask_100": [
+            379.0,
+            0.0
+          ],
+          "mask_40": [
+            36.0,
+            0.0
+          ],
+          "mask_60": [
+            42.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            189.0,
+            0.0
+          ],
+          "noise_0dB": [
+            43.0,
+            0.0
+          ],
+          "noise_10dB": [
+            42.0,
+            0.0
+          ],
+          "text_inject": [
+            249.0,
+            0.0
+          ]
+        }
+      },
+      "mmau": {
+        "clean_acc": [
+          65.41,
+          0.0
+        ],
+        "clean_net": [
+          -11.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.0,
+          0.0
+        ],
+        "consistency_answerable": [
+          80.25,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          90.88,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            111.0,
+            0.0
+          ],
+          "mask_40": [
+            -6.0,
+            0.0
+          ],
+          "mask_60": [
+            -3.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            52.0,
+            0.0
+          ],
+          "noise_0dB": [
+            -3.0,
+            0.0
+          ],
+          "noise_10dB": [
+            -5.0,
+            0.0
+          ],
+          "text_inject": [
+            42.0,
+            0.0
+          ]
+        }
+      },
+      "mmar": {
+        "clean_acc": [
+          61.01,
+          0.0
+        ],
+        "clean_net": [
+          11.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.63,
+          0.0
+        ],
+        "consistency_answerable": [
+          77.11,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          92.77,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            51.0,
+            0.0
+          ],
+          "mask_40": [
+            18.0,
+            0.0
+          ],
+          "mask_60": [
+            29.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            11.0,
+            0.0
+          ],
+          "noise_0dB": [
+            22.0,
+            0.0
+          ],
+          "noise_10dB": [
+            14.0,
+            0.0
+          ],
+          "text_inject": [
+            53.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "50": {
+      "sakura": {
+        "clean_acc": [
+          70.47,
+          0.0
+        ],
+        "clean_net": [
+          21.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.0,
+          0.0
+        ],
+        "consistency_answerable": [
+          80.16,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          95.7,
+          0.0
+        ],
+        "net": {
+          "adv_wrong": [
+            158.0,
+            0.0
+          ],
+          "mask_100": [
+            374.0,
+            0.0
+          ],
+          "mask_40": [
+            24.0,
+            0.0
+          ],
+          "mask_60": [
+            37.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            153.0,
+            0.0
+          ],
+          "noise_0dB": [
+            27.0,
+            0.0
+          ],
+          "noise_10dB": [
+            27.0,
+            0.0
+          ],
+          "text_inject": [
+            244.0,
+            0.0
+          ]
+        }
+      },
+      "mmau": {
+        "clean_acc": [
+          68.55,
+          0.0
+        ],
+        "clean_net": [
+          -6.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.0,
+          0.0
+        ],
+        "consistency_answerable": [
+          79.62,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          92.77,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            109.0,
+            0.0
+          ],
+          "mask_40": [
+            -6.0,
+            0.0
+          ],
+          "mask_60": [
+            -5.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            60.0,
+            0.0
+          ],
+          "noise_0dB": [
+            0.0,
+            0.0
+          ],
+          "noise_10dB": [
+            -2.0,
+            0.0
+          ],
+          "text_inject": [
+            50.0,
+            0.0
+          ]
+        }
+      },
+      "mmar": {
+        "clean_acc": [
+          65.41,
+          0.0
+        ],
+        "clean_net": [
+          18.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.0,
+          0.0
+        ],
+        "consistency_answerable": [
+          74.84,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          95.91,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            51.0,
+            0.0
+          ],
+          "mask_40": [
+            18.0,
+            0.0
+          ],
+          "mask_60": [
+            20.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            21.0,
+            0.0
+          ],
+          "noise_0dB": [
+            16.0,
+            0.0
+          ],
+          "noise_10dB": [
+            19.0,
+            0.0
+          ],
+          "text_inject": [
+            58.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "200": {
+      "sakura": {
+        "clean_acc": [
+          74.06,
+          0.0
+        ],
+        "clean_net": [
+          44.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.0,
+          0.0
+        ],
+        "consistency_answerable": [
+          83.25,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          98.36,
+          0.0
+        ],
+        "net": {
+          "adv_wrong": [
+            247.0,
+            0.0
+          ],
+          "mask_100": [
+            379.0,
+            0.0
+          ],
+          "mask_40": [
+            51.0,
+            0.0
+          ],
+          "mask_60": [
+            54.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            182.0,
+            0.0
+          ],
+          "noise_0dB": [
+            65.0,
+            0.0
+          ],
+          "noise_10dB": [
+            49.0,
+            0.0
+          ],
+          "text_inject": [
+            296.0,
+            0.0
+          ]
+        }
+      },
+      "mmau": {
+        "clean_acc": [
+          69.81,
+          0.0
+        ],
+        "clean_net": [
+          -4.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.0,
+          0.0
+        ],
+        "consistency_answerable": [
+          82.39,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          96.22,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            111.0,
+            0.0
+          ],
+          "mask_40": [
+            -6.0,
+            0.0
+          ],
+          "mask_60": [
+            -1.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            69.0,
+            0.0
+          ],
+          "noise_0dB": [
+            6.0,
+            0.0
+          ],
+          "noise_10dB": [
+            0.0,
+            0.0
+          ],
+          "text_inject": [
+            50.0,
+            0.0
+          ]
+        }
+      },
+      "mmar": {
+        "clean_acc": [
+          66.67,
+          0.0
+        ],
+        "clean_net": [
+          20.0,
+          0.0
+        ],
+        "clean_false_abstain": [
+          0.63,
+          0.0
+        ],
+        "consistency_answerable": [
+          76.86,
+          0.0
+        ],
+        "abstention_unanswerable": [
+          94.66,
+          0.0
+        ],
+        "net": {
+          "mask_100": [
+            52.0,
+            0.0
+          ],
+          "mask_40": [
+            20.0,
+            0.0
+          ],
+          "mask_60": [
+            25.0,
+            0.0
+          ],
+          "noise_-20dB": [
+            16.0,
+            0.0
+          ],
+          "noise_0dB": [
+            19.0,
+            0.0
+          ],
+          "noise_10dB": [
+            17.0,
+            0.0
+          ],
+          "text_inject": [
+            61.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "baselines": {}
+}
