@@ -1,7 +1,7 @@
 # AnchorPrompt
 
 **Self-Distilled Soft Prompts for Robust Audio-Language Models**
-Pooneh Mousavi, Amir Ivry, Mirco Ravanelli, Cem Subakan — submitted to ICASSP 2027
+Pooneh Mousavi, Amir Ivry, Mirco Ravanelli, Cem Subakan
 
 [Project page](https://poonehmousavi.github.io/anchorprompt/) · Paper (link to come)
 
@@ -89,10 +89,10 @@ python -m pytest tests
 ## Citation
 
 ```bibtex
-@inproceedings{mousavi2027anchorprompt,
-  title     = {AnchorPrompt: Self-Distilled Soft Prompts for Robust Audio-Language Models},
-  author    = {Mousavi, Pooneh and Ivry, Amir and Ravanelli, Mirco and Subakan, Cem},
-  booktitle = {Submitted to ICASSP 2027},
-  year      = {2027}
+@misc{mousavi2026anchorprompt,
+  title  = {AnchorPrompt: Self-Distilled Soft Prompts for Robust Audio-Language Models},
+  author = {Mousavi, Pooneh and Ivry, Amir and Ravanelli, Mirco and Subakan, Cem},
+  year   = {2026},
+  url    = {https://poonehmousavi.github.io/anchorprompt}
 }
 ```

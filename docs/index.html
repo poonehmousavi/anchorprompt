@@ -29,7 +29,7 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
-.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1480px;margin:0 auto;padding:0 24px}
 header.hero{text-align:center;padding:64px 0 32px}
 h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0 0 12px;letter-spacing:-.02em}
 .subtitle{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--muted);margin:0 auto 24px;max-width:720px}
@@ -110,6 +110,34 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
 @media (max-width:640px){.row4,.row2{grid-template-columns:1fr}}
 .ex{padding:16px}
 .ex h3{font-size:1rem}
+
+/* ---- boxes ---- */
+:root{--shadow:0 1px 2px rgba(20,22,30,.05),0 6px 20px rgba(20,22,30,.06)}
+:root[data-theme="dark"]{--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35)}}
+header.hero{padding:72px 0 40px;background:radial-gradient(1200px 400px at 50% -10%,var(--accent-soft),transparent 70%)}
+section{border-top:0;padding:28px 0}
+section > h2{display:flex;align-items:center;gap:10px}
+section > h2::before{content:"";width:6px;height:1.1em;border-radius:3px;background:var(--accent)}
+#abstract > p,#method > ul{max-width:1100px}
+#abstract{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 32px;box-shadow:var(--shadow);margin-top:8px}
+figure.method{max-width:1100px;margin:0 auto;box-shadow:var(--shadow);border-radius:18px;padding:22px}
+.model-block{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px 24px 26px;margin-top:22px;box-shadow:var(--shadow)}
+.model-block:first-of-type{border-top:1px solid var(--line);padding-top:22px}
+.model-title{display:inline-block;background:var(--ink);color:var(--bg);border-radius:999px;padding:4px 16px;font-size:1.05rem;margin-bottom:6px}
+.group-title{margin-top:18px}
+.ex{background:var(--bg);border:1px solid var(--line);border-radius:14px;box-shadow:none;border-top:4px solid var(--c,var(--accent));transition:transform .15s ease,box-shadow .15s ease;display:flex;flex-direction:column}
+.ex:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.ex .answers{margin-top:auto;padding-top:10px}
+.ex.c-adv_wrong{--c:#d0543f}.ex.c-text_inject{--c:#c48a12}.ex.c-noise{--c:#2f5bd3}.ex.c-mask{--c:#7b4fd6}.ex.c-halluc{--c:#1f8a78}
+.ex .track{display:inline-block;align-self:flex-start;background:color-mix(in srgb,var(--c,var(--accent)) 14%,transparent);color:var(--c,var(--accent));border-radius:999px;padding:2px 10px;margin-bottom:8px}
+.players figure{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 8px}
+dl.answers div{border:1px solid transparent}
+dl.answers .good{border-color:color-mix(in srgb,var(--good) 35%,transparent)}
+dl.answers .bad{border-color:color-mix(in srgb,var(--bad) 30%,transparent)}
+.ckpt a{box-shadow:var(--shadow);border-radius:14px;transition:transform .15s}
+.ckpt a:hover{transform:translateY(-2px)}
+pre{border:1px solid var(--line)}
 </style>
 </head>
 <body>
@@ -118,9 +146,8 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
 <header class="hero wrap">
   <h1>AnchorPrompt</h1>
   <p class="subtitle">Self-Distilled Soft Prompts for Robust Audio-Language Models</p>
-  <p class="authors"><span>Pooneh Mousavi<sup>1,2</sup></span><span>Amir Ivry<sup>4</sup></span><span>Mirco Ravanelli<sup>1,2</sup></span><span>Cem Subakan<sup>2,3</sup></span></p>
-  <p class="affil"><sup>1</sup>Concordia University · <sup>2</sup>Mila – Quebec AI Institute · <sup>3</sup>Laval University · <sup>4</sup>Technion – IIT</p>
-  <p class="venue">Submitted to ICASSP 2027</p>
+  <p class="authors"><span>Pooneh Mousavi<sup>1,2</sup></span><span>Amir Ivry<sup>3</sup></span><span>Mirco Ravanelli<sup>1,2</sup></span><span>Cem Subakan<sup>2,4</sup></span></p>
+  <p class="affil"><sup>1</sup>Concordia University · <sup>2</sup>Mila – Quebec AI Institute · <sup>3</sup>Technion – IIT · <sup>4</sup>Laval University</p>
   <div class="buttons">
     <a class="btn" href="PAPER_URL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Paper</a>
     <a class="btn" href="https://github.com/poonehmousavi/anchorprompt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>Code</a>
@@ -201,14 +228,14 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
   </ul>
 </section>
 
-<section id="examples" class="bleed">
+<section id="examples">
   <h2>Audio examples</h2>
   <p>SAKURA test-split questions that the model answers correctly on clean audio. Each card plays the clean and the perturbed input and shows the answer of the frozen model alone (<b>Base</b>) and with the learned prompt (<b>+ AnchorPrompt</b>). The three models are shown one after the other; where possible the same recording is used for all of them.</p>
 <div class="model-block">
   <h3 class="model-title">Qwen2.5-Omni-7B</h3>
   <h4 class="group-title">Robustness: the clean answer survives the perturbation</h4>
   <p class="group-sub">The base model is misled; with AnchorPrompt it returns to the answer it gives on clean audio.</p>
-  <div class="examples row4"><article class="ex">
+  <div class="examples row4"><article class="ex c-adv_wrong">
   <span class="track">Animal</span>
   <h3>Adversarial audio injection</h3>
   <p class="note">A synthesized voice speaking a wrong option is mixed into the recording.</p>
@@ -220,7 +247,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(b) sheep</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(d) dog</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-text_inject">
   <span class="track">Animal</span>
   <h3>Adversarial text injection</h3>
   <p class="note">A sentence asserting a wrong option is added to the question. The audio is unchanged.</p>
@@ -232,7 +259,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(b) hen</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(a) cat</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-noise">
   <span class="track">Animal</span>
   <h3>Noise</h3>
   <p class="note">White noise at the same power as the signal (0 dB SNR).</p>
@@ -244,7 +271,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(c) pig</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(b) cow</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-mask">
   <span class="track">Animal</span>
   <h3>Masking</h3>
   <p class="note">60% of the recording is set to silence in 100 ms chunks.</p>
@@ -259,7 +286,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
 </article></div>
   <h4 class="group-title">Hallucination: declining when the audio carries no evidence</h4>
   <p class="group-sub">The base model still picks an option; with AnchorPrompt it answers CANNOT DETERMINE.</p>
-  <div class="examples row2"><article class="ex">
+  <div class="examples row2"><article class="ex c-halluc">
   <span class="track">Animal</span>
   <h3>Silence (100% masking)</h3>
   <p class="note">The whole recording is silent: nothing supports any option.</p>
@@ -271,7 +298,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(b) cow</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>CANNOT DETERMINE</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-halluc">
   <span class="track">Animal</span>
   <h3>Noise at −20 dB SNR</h3>
   <p class="note">Noise 20 dB louder than the signal: the content is buried.</p>
@@ -289,7 +316,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
   <h3 class="model-title">Qwen3-Omni-30B-A3B</h3>
   <h4 class="group-title">Robustness: the clean answer survives the perturbation</h4>
   <p class="group-sub">The base model is misled; with AnchorPrompt it returns to the answer it gives on clean audio.</p>
-  <div class="examples row4"><article class="ex">
+  <div class="examples row4"><article class="ex c-adv_wrong">
   <span class="track">Animal</span>
   <h3>Adversarial audio injection</h3>
   <p class="note">A synthesized voice speaking a wrong option is mixed into the recording.</p>
@@ -301,7 +328,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(b) sheep</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(d) dog</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-text_inject">
   <span class="track">Animal</span>
   <h3>Adversarial text injection</h3>
   <p class="note">A sentence asserting a wrong option is added to the question. The audio is unchanged.</p>
@@ -313,7 +340,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(b) hen</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(a) cat</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-noise">
   <span class="track">Animal</span>
   <h3>Noise</h3>
   <p class="note">White noise at the same power as the signal (0 dB SNR).</p>
@@ -325,7 +352,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(d) pig</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(a) cow</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-mask">
   <span class="track">Animal</span>
   <h3>Masking</h3>
   <p class="note">60% of the recording is set to silence in 100 ms chunks.</p>
@@ -340,7 +367,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
 </article></div>
   <h4 class="group-title">Hallucination: declining when the audio carries no evidence</h4>
   <p class="group-sub">The base model still picks an option; with AnchorPrompt it answers CANNOT DETERMINE.</p>
-  <div class="examples row2"><article class="ex">
+  <div class="examples row2"><article class="ex c-halluc">
   <span class="track">Animal</span>
   <h3>Silence (100% masking)</h3>
   <p class="note">The whole recording is silent: nothing supports any option.</p>
@@ -352,7 +379,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(d) frog</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>CANNOT DETERMINE</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-halluc">
   <span class="track">Animal</span>
   <h3>Noise at −20 dB SNR</h3>
   <p class="note">Noise 20 dB louder than the signal: the content is buried.</p>
@@ -370,7 +397,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
   <h3 class="model-title">Audio Flamingo 3</h3>
   <h4 class="group-title">Robustness: the clean answer survives the perturbation</h4>
   <p class="group-sub">The base model is misled; with AnchorPrompt it returns to the answer it gives on clean audio.</p>
-  <div class="examples row4"><article class="ex">
+  <div class="examples row4"><article class="ex c-adv_wrong">
   <span class="track">Animal</span>
   <h3>Adversarial audio injection</h3>
   <p class="note">A synthesized voice speaking a wrong option is mixed into the recording.</p>
@@ -382,7 +409,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(b) sheep</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(d) dog</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-text_inject">
   <span class="track">Animal</span>
   <h3>Adversarial text injection</h3>
   <p class="note">A sentence asserting a wrong option is added to the question. The audio is unchanged.</p>
@@ -394,7 +421,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(b) hen</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(a) cat</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-noise">
   <span class="track">Animal</span>
   <h3>Noise</h3>
   <p class="note">White noise at the same power as the signal (0 dB SNR).</p>
@@ -406,7 +433,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(b) sheep</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>(c) cat</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-mask">
   <span class="track">Animal</span>
   <h3>Masking</h3>
   <p class="note">60% of the recording is set to silence in 100 ms chunks.</p>
@@ -421,7 +448,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
 </article></div>
   <h4 class="group-title">Hallucination: declining when the audio carries no evidence</h4>
   <p class="group-sub">The base model still picks an option; with AnchorPrompt it answers CANNOT DETERMINE.</p>
-  <div class="examples row2"><article class="ex">
+  <div class="examples row2"><article class="ex c-halluc">
   <span class="track">Animal</span>
   <h3>Silence (100% masking)</h3>
   <p class="note">The whole recording is silent: nothing supports any option.</p>
@@ -433,7 +460,7 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.85rem;text-align:center
     <div class="bad"><dt>Base</dt><dd>(a) hen</dd></div>
     <div class="good"><dt>+ AnchorPrompt</dt><dd>CANNOT DETERMINE</dd></div>
   </dl>
-</article><article class="ex">
+</article><article class="ex c-halluc">
   <span class="track">Animal</span>
   <h3>Noise at −20 dB SNR</h3>
   <p class="note">Noise 20 dB louder than the signal: the content is buried.</p>
@@ -471,11 +498,11 @@ bash scripts/train.sh qwen2.5-omni</code></pre>
 
 <section id="citation">
   <h2>Citation</h2>
-<pre><code>@inproceedings{mousavi2027anchorprompt,
-  title     = {AnchorPrompt: Self-Distilled Soft Prompts for Robust Audio-Language Models},
-  author    = {Mousavi, Pooneh and Ivry, Amir and Ravanelli, Mirco and Subakan, Cem},
-  booktitle = {Submitted to ICASSP 2027},
-  year      = {2027}
+<pre><code>@misc{mousavi2026anchorprompt,
+  title  = {AnchorPrompt: Self-Distilled Soft Prompts for Robust Audio-Language Models},
+  author = {Mousavi, Pooneh and Ivry, Amir and Ravanelli, Mirco and Subakan, Cem},
+  year   = {2026},
+  url    = {https://poonehmousavi.github.io/anchorprompt}
 }</code></pre>
 </section>
 </main>
